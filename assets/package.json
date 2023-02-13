@@ -1,0 +1,12 @@
+{
+  "name": "picme",
+  "version": "1.0.0",
+  "description": "picme project",
+  "main": "tailwind.config.js",
+  "author": "Nuno <mail@nuno.site> Freire",
+  "license": "ISC",
+  "dependencies": {
+    "daisyui": "^2.50.0",
+    "topbar": "^2.0.1"
+  }
+}
