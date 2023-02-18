@@ -1,23 +1,6 @@
 defmodule PicmeWeb.CoreComponents.Modal do
   @moduledoc """
-  Renders a modal.
-
-    ## Examples
-
-        <.modal id="confirm-modal">
-          Are you sure?
-          <:confirm>OK</:confirm>
-          <:cancel>Cancel</:cancel>
-        </.modal>
-
-    JS commands may be passed to the `:on_cancel` and `on_confirm` attributes
-    for the caller to react to each button press, for example:
-
-        <.modal id="confirm" on_confirm={JS.push("delete")} on_cancel={JS.navigate(~p"/posts")}>
-          Are you sure you?
-          <:confirm>OK</:confirm>
-          <:cancel>Cancel</:cancel>
-        </.modal>
+  Modal and dialog components.
   """
 
   use Phoenix.Component
@@ -28,6 +11,26 @@ defmodule PicmeWeb.CoreComponents.Modal do
 
   alias Phoenix.LiveView.JS
 
+  @doc """
+  Renders a modal.
+
+  ## Examples
+
+      <.modal id="confirm-modal">
+        Are you sure?
+        <:confirm>OK</:confirm>
+        <:cancel>Cancel</:cancel>
+      </.modal>
+
+  JS commands may be passed to the `:on_cancel` and `on_confirm` attributes
+  for the caller to react to each button press, for example:
+
+      <.modal id="confirm" on_confirm={JS.push("delete")} on_cancel={JS.navigate(~p"/posts")}>
+        Are you sure you?
+        <:confirm>OK</:confirm>
+        <:cancel>Cancel</:cancel>
+      </.modal>
+  """
   attr :id, :string, required: true
   attr :show, :boolean, default: false
   attr :on_cancel, JS, default: %JS{}
@@ -41,12 +44,7 @@ defmodule PicmeWeb.CoreComponents.Modal do
 
   def modal(assigns) do
     ~H"""
-    <div
-      id={@id}
-      phx-mounted={@show && show_modal(@id)}
-      phx-remove={hide_modal(@id)}
-      class="relative z-50 hidden"
-    >
+    <div id={@id} phx-mounted={@show && show_modal(@id)} phx-remove={hide_modal(@id)} class="relative z-50 hidden">
       <div id={"#{@id}-bg"} class="fixed inset-0 bg-zinc-50/90 transition-opacity" aria-hidden="true" />
       <div
         class="fixed inset-0 overflow-y-auto"
@@ -81,11 +79,7 @@ defmodule PicmeWeb.CoreComponents.Modal do
                   <h1 id={"#{@id}-title"} class="text-lg font-semibold leading-8 text-zinc-800">
                     <%= render_slot(@title) %>
                   </h1>
-                  <p
-                    :if={@subtitle != []}
-                    id={"#{@id}-description"}
-                    class="mt-2 text-sm leading-6 text-zinc-600"
-                  >
+                  <p :if={@subtitle != []} id={"#{@id}-description"} class="mt-2 text-sm leading-6 text-zinc-600">
                     <%= render_slot(@subtitle) %>
                   </p>
                 </header>

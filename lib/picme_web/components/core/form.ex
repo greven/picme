@@ -1,21 +1,24 @@
-defmodule PicmeWeb.CoreComponents.SimpleForm do
+defmodule PicmeWeb.CoreComponents.Form do
   @moduledoc """
-  Renders a simple form.
-
-  ## Examples
-
-    <.simple_form :let={f} for={:user} phx-change="validate" phx-submit="save">
-      <.input field={{f, :email}} label="Email"/>
-      <.input field={{f, :username}} label="Username" />
-      <:actions>
-        <.button>Save</.button>
-      </:actions>
-    </.simple_form>
+  Form components
   """
 
   use Phoenix.Component
 
-  attr :for, :any, default: nil, doc: "the datastructure for the form"
+  @doc """
+  Renders a simple form.
+
+  ## Examples
+
+      <.simple_form for={@form} phx-change="validate" phx-submit="save">
+        <.input field={@form[:email]} label="Email"/>
+        <.input field={@form[:username]} label="Username" />
+        <:actions>
+          <.button>Save</.button>
+        </:actions>
+      </.simple_form>
+  """
+  attr :for, :any, required: true, doc: "the datastructure for the form"
   attr :as, :any, default: nil, doc: "the server side parameter to collect all input under"
 
   attr :rest, :global,

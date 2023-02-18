@@ -7,8 +7,8 @@ defmodule PicmeWeb.UserConfirmationInstructionsLive do
     ~H"""
     <.header>Resend confirmation instructions</.header>
 
-    <.simple_form :let={f} for={:user} id="resend_confirmation_form" phx-submit="send_instructions">
-      <.input field={{f, :email}} type="email" label="Email" required />
+    <.simple_form for={@form} id="resend_confirmation_form" phx-submit="send_instructions">
+      <.input field={@form[:email]} type="email" label="Email" required />
       <:actions>
         <.button phx-disable-with="Sending...">Resend confirmation instructions</.button>
       </:actions>
@@ -23,7 +23,7 @@ defmodule PicmeWeb.UserConfirmationInstructionsLive do
   end
 
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok, assign(socket, form: to_form(%{}, as: "user"))}
   end
 
   def handle_event("send_instructions", %{"user" => %{"email" => email}}, socket) do

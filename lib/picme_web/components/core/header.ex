@@ -1,9 +1,13 @@
 defmodule PicmeWeb.CoreComponents.Header do
   @moduledoc """
-  Renders a header with title.
+  Headers.
   """
 
   use Phoenix.Component
+
+  @doc """
+  Renders a header with title.
+  """
 
   attr :class, :string, default: nil
 

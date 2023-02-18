@@ -6,14 +6,21 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./js/**/*.js", "../lib/*_web.ex", "../lib/*_web/**/*.*ex"],
   daisyui: {
-    themes: {
-      picme: {
-        primary: "#a991f7",
-        secondary: "#f6d860",
-        accent: "#37cdbe",
-        neutral: "#3d4451",
+    themes: [
+      {
+        picme: {
+          primary: "#FED784",
+          secondary: "#F88385",
+          accent: "#11595D",
+          neutral: "#202020",
+          "base-100": "#FAF6F2",
+          info: "#3ABFF8",
+          success: "#36D399",
+          warning: "#FBBD23",
+          error: "#F87272",
+        },
       },
-    },
+    ],
   },
   plugins: [
     require("daisyui"),

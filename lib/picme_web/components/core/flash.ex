@@ -1,11 +1,6 @@
 defmodule PicmeWeb.CoreComponents.Flash do
   @moduledoc """
-  Renders flash notices.
-
-  ## Examples
-
-      <.flash kind={:info} flash={@flash} />
-      <.flash kind={:info} phx-mounted={show("#flash")}>Welcome Back!</.flash>
+  Flash messages.
   """
 
   use Phoenix.Component
@@ -15,6 +10,14 @@ defmodule PicmeWeb.CoreComponents.Flash do
 
   alias Phoenix.LiveView.JS
 
+  @doc """
+  Renders flash notices.
+
+  ## Examples
+
+      <.flash kind={:info} flash={@flash} />
+      <.flash kind={:info} phx-mounted={show("#flash")}>Welcome Back!</.flash>
+  """
   attr :id, :string, default: "flash", doc: "the optional id of flash container"
   attr :flash, :map, default: %{}, doc: "the map of flash messages to display"
   attr :title, :string, default: nil
@@ -46,15 +49,37 @@ defmodule PicmeWeb.CoreComponents.Flash do
         <%= @title %>
       </p>
       <p class="mt-2 text-[0.8125rem] leading-5"><%= msg %></p>
-      <button
-        :if={@close}
-        type="button"
-        class="group absolute top-2 right-1 p-2"
-        aria-label={gettext("close")}
-      >
+      <button :if={@close} type="button" class="group absolute top-2 right-1 p-2" aria-label={gettext("close")}>
         <Heroicons.x_mark solid class="h-5 w-5 stroke-current opacity-40 group-hover:opacity-70" />
       </button>
     </div>
+    """
+  end
+
+  @doc """
+  Shows the flash group with standard titles and content.
+
+  ## Examples
+
+      <.flash_group flash={@flash} />
+  """
+  attr :flash, :map, required: true, doc: "the map of flash messages"
+
+  def flash_group(assigns) do
+    ~H"""
+    <.flash kind={:info} title="Success!" flash={@flash} />
+    <.flash kind={:error} title="Error!" flash={@flash} />
+    <.flash
+      id="disconnected"
+      kind={:error}
+      title="We can't find the internet"
+      close={false}
+      autoshow={false}
+      phx-disconnected={show("#disconnected")}
+      phx-connected={hide("#disconnected")}
+    >
+      Attempting to reconnect <Heroicons.arrow_path class="ml-1 w-3 h-3 inline animate-spin" />
+    </.flash>
     """
   end
 end

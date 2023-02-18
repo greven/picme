@@ -2,16 +2,16 @@ defmodule PicmeWeb.CoreComponents do
   defmacro __using__(_) do
     quote do
       import PicmeWeb.CoreComponents.{
-        Back,
         Button,
         Error,
         Flash,
+        Form,
         Header,
         Input,
         Label,
+        Link,
         List,
         Modal,
-        SimpleForm,
         Table
       }
 

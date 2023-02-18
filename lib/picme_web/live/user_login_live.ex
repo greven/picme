@@ -15,19 +15,12 @@ defmodule PicmeWeb.UserLoginLive do
         </:subtitle>
       </.header>
 
-      <.simple_form
-        :let={f}
-        id="login_form"
-        for={:user}
-        action={~p"/users/log_in"}
-        as={:user}
-        phx-update="ignore"
-      >
-        <.input field={{f, :email}} type="email" label="Email" required />
-        <.input field={{f, :password}} type="password" label="Password" required />
+      <.simple_form for={@form} id="login_form" action={~p"/users/log_in"} phx-update="ignore">
+        <.input field={@form[:email]} type="email" label="Email" required />
+        <.input field={@form[:password]} type="password" label="Password" required />
 
-        <:actions :let={f}>
-          <.input field={{f, :remember_me}} type="checkbox" label="Keep me logged in" />
+        <:actions>
+          <.input field={@form[:remember_me]} type="checkbox" label="Keep me logged in" />
           <.link href={~p"/users/reset_password"} class="text-sm font-semibold">
             Forgot your password?
           </.link>
@@ -44,6 +37,7 @@ defmodule PicmeWeb.UserLoginLive do
 
   def mount(_params, _session, socket) do
     email = live_flash(socket.assigns.flash, :email)
-    {:ok, assign(socket, email: email), temporary_assigns: [email: nil]}
+    form = to_form(%{email: email}, as: "user")
+    {:ok, assign(socket, form: form), temporary_assigns: [form: form]}
   end
 end

@@ -1,11 +1,15 @@
 defmodule PicmeWeb.CoreComponents.Error do
   @moduledoc """
-  Generates a generic error message.
+  Error message components.
   """
 
   use Phoenix.Component
 
-  slot :inner_block, required: true
+  @doc """
+  Generates a generic error message.
+  """
+
+  slot(:inner_block, required: true)
 
   def error(assigns) do
     ~H"""

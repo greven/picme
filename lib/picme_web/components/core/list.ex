@@ -1,5 +1,11 @@
 defmodule PicmeWeb.CoreComponents.List do
   @moduledoc """
+  List components.
+  """
+
+  use Phoenix.Component
+
+  @doc """
   Renders a data list.
 
   ## Examples
@@ -9,9 +15,6 @@ defmodule PicmeWeb.CoreComponents.List do
         <:item title="Views"><%= @post.views %></:item>
       </.list>
   """
-
-  use Phoenix.Component
-
   slot :item, required: true do
     attr :title, :string, required: true
   end

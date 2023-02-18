@@ -82,7 +82,7 @@ npm-debug.log
 # Elixir
 .elixir_ls/
 
-# Other
+# Temporary files, for example, from tests.
 tmp
 .tmp
 .temp

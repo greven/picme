@@ -1,5 +1,11 @@
 defmodule PicmeWeb.CoreComponents.Button do
   @moduledoc """
+  Button components.
+  """
+
+  use Phoenix.Component
+
+  @doc """
   Renders a button.
 
   ## Examples
@@ -7,8 +13,6 @@ defmodule PicmeWeb.CoreComponents.Button do
       <.button>Send!</.button>
       <.button phx-click="go" class="ml-2">Send!</.button>
   """
-
-  use Phoenix.Component
 
   attr :type, :string, default: nil
   attr :class, :string, default: nil

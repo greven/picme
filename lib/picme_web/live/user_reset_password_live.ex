@@ -9,19 +9,18 @@ defmodule PicmeWeb.UserResetPasswordLive do
       <.header class="text-center">Reset Password</.header>
 
       <.simple_form
-        :let={f}
-        for={@changeset}
+        for={@form}
         id="reset_password_form"
         phx-submit="reset_password"
         phx-change="validate"
       >
-        <.error :if={@changeset.action == :insert}>
+        <.error :if={@form.errors != []}>
           Oops, something went wrong! Please check the errors below.
         </.error>
 
-        <.input field={{f, :password}} type="password" label="New password" required />
+        <.input field={@form[:password]} type="password" label="New password" required />
         <.input
-          field={{f, :password_confirmation}}
+          field={@form[:password_confirmation]}
           type="password"
           label="Confirm new password"
           required
@@ -43,16 +42,16 @@ defmodule PicmeWeb.UserResetPasswordLive do
   def mount(params, _session, socket) do
     socket = assign_user_and_token(socket, params)
 
-    socket =
+    form_source =
       case socket.assigns do
         %{user: user} ->
-          assign(socket, :changeset, Accounts.change_user_password(user))
+          Accounts.change_user_password(user)
 
         _ ->
-          socket
+          %{}
       end
 
-    {:ok, socket, temporary_assigns: [changeset: nil]}
+    {:ok, assign_form(socket, form_source), temporary_assigns: [form: nil]}
   end
 
   # Do not log in the user after reset password to avoid a
@@ -66,13 +65,13 @@ defmodule PicmeWeb.UserResetPasswordLive do
          |> redirect(to: ~p"/users/log_in")}
 
       {:error, changeset} ->
-        {:noreply, assign(socket, :changeset, Map.put(changeset, :action, :insert))}
+        {:noreply, assign_form(socket, Map.put(changeset, :action, :insert))}
     end
   end
 
   def handle_event("validate", %{"user" => user_params}, socket) do
     changeset = Accounts.change_user_password(socket.assigns.user, user_params)
-    {:noreply, assign(socket, changeset: Map.put(changeset, :action, :validate))}
+    {:noreply, assign_form(socket, Map.put(changeset, :action, :validate))}
   end
 
   defp assign_user_and_token(socket, %{"token" => token}) do
@@ -83,5 +82,9 @@ defmodule PicmeWeb.UserResetPasswordLive do
       |> put_flash(:error, "Reset password link is invalid or it has expired.")
       |> redirect(to: ~p"/")
     end
+  end
+
+  defp assign_form(socket, %{} = source) do
+    assign(socket, :form, to_form(source, as: "user"))
   end
 end

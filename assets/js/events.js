@@ -9,10 +9,10 @@ export function registerTopbar() {
     shadowBlur: 4,
   });
 
-  window.addEventListener("phx:page-loading-start", (info) =>
-    topbar.delayedShow(200)
+  window.addEventListener("phx:page-loading-start", (_info) =>
+    topbar.show(300)
   );
-  window.addEventListener("phx:page-loading-stop", (info) => topbar.hide());
+  window.addEventListener("phx:page-loading-stop", (_info) => topbar.hide());
 }
 
 export function registerGlobalEventHandlers() {
