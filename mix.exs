@@ -32,13 +32,12 @@ defmodule Picme.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:bcrypt_elixir, "~> 3.0"},
       # Phoenix Framework
-      {:phoenix, "~> 1.7.0-rc.2", override: true},
+      {:phoenix, "~> 1.7.0-rc.3", override: true},
       {:phoenix_ecto, "~> 4.4"},
-      {:phoenix_html, "~> 3.0"},
-      {:phoenix_live_view, "~> 0.18.3"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_html, "~> 3.3"},
+      {:phoenix_live_view, "~> 0.18.15"},
+      {:phoenix_live_reload, "~> 1.4", only: :dev},
       {:phoenix_live_dashboard, "~> 0.7.2"},
 
       # HTTP server
@@ -48,32 +47,37 @@ defmodule Picme.MixProject do
       {:finch, "~> 0.14"},
 
       # Database
-      {:ecto_sql, "~> 3.6"},
+      {:ecto_sql, "~> 3.9"},
       {:postgrex, ">= 0.0.0"},
 
       # JSON & CSV
-      {:jason, "~> 1.2"},
+      {:jason, "~> 1.4"},
 
       # Mail
-      {:swoosh, "~> 1.3"},
+      {:swoosh, "~> 1.9"},
 
       # i18n
-      {:gettext, "~> 0.20"},
+      {:gettext, "~> 0.22"},
 
       # Telemetry
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
 
-      # Assets
-      {:esbuild, "~> 0.5", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.1.8", runtime: Mix.env() == :dev},
-      {:heroicons, "~> 0.5"},
+      # Security
+      {:bcrypt_elixir, "~> 3.0"},
+      {:comeonin, "~> 5.3"},
+      {:sobelow, "~> 0.11", only: :dev},
 
       # Utils
       {:floki, ">= 0.30.0", only: :test},
 
+      # Assets
+      {:esbuild, "~> 0.6", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
+      {:heroicons, "~> 0.5"},
+
       # Development
-      {:credo, "~> 1.6.7", only: [:dev], runtime: false}
+      {:credo, "~> 1.6", only: [:dev], runtime: false}
     ]
   end
 

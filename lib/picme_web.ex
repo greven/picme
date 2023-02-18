@@ -84,7 +84,7 @@ defmodule PicmeWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import PicmeWeb.CoreComponents
+      use PicmeWeb.CoreComponents
       import PicmeWeb.Gettext
 
       # Shortcut for generating JS commands
