@@ -1,5 +1,5 @@
 defmodule PicmeWeb.UserSessionControllerTest do
-  use PicmeWeb.ConnCase, async: true
+  use PicmeWeb.ConnCase
 
   import Picme.AccountsFixtures
 

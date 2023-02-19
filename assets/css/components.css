@@ -1,0 +1,5 @@
+@layer components {
+  .btn {
+    @apply rounded-full bg-black;
+  }
+}

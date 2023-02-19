@@ -50,18 +50,6 @@ $RECYCLE.BIN/
 # Linux
 *~
 
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
-
 # Ignore .env files so we don't commit secrets
 .env.*
 *.env
@@ -75,18 +63,8 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 *.code-workspace
 
-# NodeJS
-node_modules/
-npm-debug.log
-
-# Elixir
+# Elixir language server
 .elixir_ls/
-
-# Temporary files, for example, from tests.
-tmp
-.tmp
-.temp
-.ash_history
 
 # The directory Mix will write compiled artifacts to.
 /_build/
@@ -97,7 +75,7 @@ tmp
 # The directory Mix downloads your dependencies sources to.
 /deps/
 
-# Where third-party dependencies like ExDoc output generated docs.
+# Where 3rd-party dependencies like ExDoc output generated docs.
 /doc/
 
 # Ignore .fetch files in case you like to edit your project deps locally.
@@ -109,15 +87,25 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
-# Elixir language server
-.elixir_ls/
+# Temporary files, for example, from tests.
+/tmp/
 
-# The directory NPM downloads your dependencies sources to.
-/assets/node_modules/
+# Ignore package tarball (built via "mix hex.build").
+dev_app-*.tar
 
 # Ignore assets that are produced by build tools.
-/priv/static/
+/priv/static/assets/
+
+# Ignore digested assets cache.
+/priv/static/cache_manifest.json
+
+# In case you use Node.js/npm, you want to ignore these.
+npm-debug.log
+/assets/node_modules/
+
+# Database files
+*.db
+*.db-*
 
 # Project specific
-.tmp/
 screenshots/

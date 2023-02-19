@@ -7,12 +7,7 @@ defmodule PicmeWeb.UserSettingsLive do
     ~H"""
     <.header>Change Email</.header>
 
-    <.simple_form
-      for={@email_form}
-      id="email_form"
-      phx-submit="update_email"
-      phx-change="validate_email"
-    >
+    <.simple_form for={@email_form} id="email_form" phx-submit="update_email" phx-change="validate_email">
       <.input field={@email_form[:email]} type="email" label="Email" required />
       <.input
         field={@email_form[:current_password]}
@@ -41,11 +36,7 @@ defmodule PicmeWeb.UserSettingsLive do
     >
       <.input field={@password_form[:email]} type="hidden" value={@current_email} />
       <.input field={@password_form[:password]} type="password" label="New password" required />
-      <.input
-        field={@password_form[:password_confirmation]}
-        type="password"
-        label="Confirm new password"
-      />
+      <.input field={@password_form[:password_confirmation]} type="password" label="Confirm new password" />
       <.input
         field={@password_form[:current_password]}
         name="current_password"

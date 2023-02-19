@@ -48,7 +48,8 @@ defmodule Picme.MixProject do
 
       # Database
       {:ecto_sql, "~> 3.9"},
-      {:postgrex, ">= 0.0.0"},
+      {:ecto_sqlite3, ">= 0.0.0"},
+      # {:litestream, "~> 0.3.0"},
 
       # JSON & CSV
       {:jason, "~> 1.4"},

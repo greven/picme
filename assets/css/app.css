@@ -2,4 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* This file is for your main application CSS */
+@import "./reset.css";
+@import "./fonts.css";
+@import "./base.css";
+@import "./components.css";
+@import "./phoenix.css";
