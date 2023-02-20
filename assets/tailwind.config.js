@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
         headings: ["Montserrat", ...defaultTheme.fontFamily.serif],
       },
     },
@@ -21,9 +21,11 @@ module.exports = {
       {
         light: {
           primary: "#FED784",
-          secondary: "#1A1A1A",
-          accent: "#F7705A",
-          neutral: "#202020",
+          secondary: "#F7705A",
+          accent: "#0A9396",
+          neutral: "#001219",
+          "neutral-focus": "#001E29",
+          "neutral-content": "#F3FCFF",
           "base-100": "#FAF6F2",
           info: "#3ABFF8",
           success: "#36D399",
@@ -32,17 +34,7 @@ module.exports = {
         },
       },
       {
-        dark: {
-          primary: "#FED784",
-          secondary: "#1A1A1A",
-          accent: "#F7705A",
-          neutral: "#202020",
-          "base-100": "#202020",
-          info: "#3ABFF8",
-          success: "#36D399",
-          warning: "#FBBD23",
-          error: "#F87272",
-        },
+        dark: {},
       },
     ],
   },
