@@ -64,12 +64,13 @@ defmodule Picme.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
 
-      # Security
+      # Securityr
       {:bcrypt_elixir, "~> 3.0"},
       {:comeonin, "~> 5.3"},
       {:sobelow, "~> 0.11", only: :dev},
 
       # Utils
+      {:phoenix_storybook, github: "phenixdigital/phoenix_storybook", only: :dev},
       {:floki, ">= 0.30.0", only: :test},
       {:cva, "~> 0.2"},
 

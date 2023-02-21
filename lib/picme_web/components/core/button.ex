@@ -15,7 +15,17 @@ defmodule PicmeWeb.CoreComponents.Button do
       <.button phx-click="go" class="ml-2">Send!</.button>
   """
 
-  variant(:size, [xs: "btn-xs", sm: "btn-sm", md: "btn-md", lg: "btn-lg"], default: :md)
+  variant(
+    :size,
+    [
+      xs: "btn-xs",
+      sm: "btn-sm",
+      md: "btn-md",
+      lg: "btn-lg",
+      lg: "btn-xl"
+    ],
+    default: :md
+  )
 
   variant(
     :variant,

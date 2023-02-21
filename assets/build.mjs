@@ -13,7 +13,7 @@ const plugins = [
 ];
 
 let buildOptions = {
-  entryPoints: ["js/app.js"],
+  entryPoints: ["js/app.js", "js/storybook.js"],
   bundle: true,
   target: "es2017",
   outdir: "../priv/static/assets",

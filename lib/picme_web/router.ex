@@ -1,6 +1,7 @@
 defmodule PicmeWeb.Router do
   use PicmeWeb, :router
 
+  import PhoenixStorybook.Router
   import PicmeWeb.UserAuth
 
   pipeline :browser do
@@ -75,9 +76,14 @@ defmodule PicmeWeb.Router do
     # as long as you are also using SSL (which you should anyway).
     import Phoenix.LiveDashboard.Router
 
+    scope "/" do
+      storybook_assets()
+    end
+
     scope "/dev" do
       pipe_through :browser
 
+      live_storybook "/storybook", backend_module: PicmeWeb.Storybook
       live_dashboard "/dashboard", metrics: PicmeWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
