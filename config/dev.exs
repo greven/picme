@@ -16,14 +16,13 @@ config :picme, Picme.Repo,
 config :picme, PicmeWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: 4000],
+  http: [ip: {0, 0, 0, 0}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
   secret_key_base: "Q04jE+k01nL7CYUg2yLI57EDZFhqCqSSD8k2kLjuptMGL/wxdm2+SXeVolm/195D",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+    npm: ["start", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support

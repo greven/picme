@@ -1,17 +1,16 @@
 <.flash_group flash={@flash} />
 <div class="p-8">
   <div class="flex items-center gap-2">
-    <.button class="btn" intent="neutral">Button</.button>
-    <.button class="btn" intent="primary">Button</.button>
-    <.button class="btn" intent="secondary">Button</.button>
-    <.button class="btn" intent="accent">Button</.button>
-    <.button class="btn" intent="error">Button</.button>
-    <.button class="btn" intent="info">Button</.button>
+    <.button>Button</.button>
+    <.button variant="basic">Button</.button>
+    <%!-- <.button variant="ghost" intent="error">Button</.button> --%>
 
-    <.button class="btn gap-2" intent="info">
+    <.button class="btn gap-2" variant="light" intent="primary">
       <Lucideicons.activity class="h-5 w-5" />
       <span>Button</span>
     </.button>
+
+    <button class="btn btn-error btn-outline">Button</button>
   </div>
 
   <h1 class="font-headings text-4xl my-4">Whereas recognition of the inherent dignity</h1>

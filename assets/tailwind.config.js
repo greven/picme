@@ -15,14 +15,16 @@ module.exports = {
     },
   },
   daisyui: {
-    styled: true,
+    styled: false,
     darkTheme: false,
     themes: [
       {
         light: {
           primary: "#FED784",
           secondary: "#F7705A",
+          "secondary-content": "#FEE8E5",
           accent: "#0A9396",
+          "accent-content": "#ECF6F7",
           neutral: "#001219",
           "neutral-focus": "#001E29",
           "neutral-content": "#F3FCFF",
@@ -41,6 +43,9 @@ module.exports = {
   plugins: [
     require("daisyui"),
     require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/aspect-ratio"),
     // Phoenix utilities
     plugin(({ addVariant }) =>
       addVariant("phx-no-feedback", [".phx-no-feedback&", ".phx-no-feedback &"])

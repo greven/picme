@@ -71,7 +71,7 @@ defmodule PicmeWeb.CoreComponents.Modal do
                   class="-m-3 flex-none p-3 opacity-20 hover:opacity-40"
                   aria-label={gettext("close")}
                 >
-                  <Heroicons.x_mark solid class="h-5 w-5 stroke-current" />
+                  <Lucideicons.x class="h-5 w-5 stroke-current" />
                 </button>
               </div>
               <div id={"#{@id}-content"}>

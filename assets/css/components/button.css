@@ -1,0 +1,5 @@
+.btn {
+  border-width: 2px;
+  border-radius: theme("borderRadius.full");
+  font-weight: theme("fontWeight.semibold");
+}

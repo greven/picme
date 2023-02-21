@@ -71,10 +71,9 @@ defmodule Picme.MixProject do
 
       # Utils
       {:floki, ">= 0.30.0", only: :test},
+      {:cva, "~> 0.2"},
 
       # Assets
-      {:esbuild, "~> 0.6", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:lucide_icons, "~> 1.0.0"},
 
       # Development
@@ -94,10 +93,9 @@ defmodule Picme.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.install": ["cmd npm install --prefix assets"],
-      "assets.setup": ["assets.install", "tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind default", "esbuild default"],
-      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
+      "assets.setup": ["cmd npm install --prefix assets"],
+      "assets.build": ["cmd npm run build --prefix assets"],
+      "assets.deploy": ["assets.build", "phx.digest"]
     ]
   end
 end

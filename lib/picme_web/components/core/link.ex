@@ -20,7 +20,7 @@ defmodule PicmeWeb.CoreComponents.Link do
     ~H"""
     <div class="mt-16">
       <.link navigate={@navigate} class="text-sm font-semibold leading-6 text-zinc-900 hover:text-zinc-700">
-        <Heroicons.arrow_left solid class="w-3 h-3 stroke-current inline" />
+        <Lucideicons.arrow_left class="w-3 h-3 stroke-current inline" />
         <%= render_slot(@inner_block) %>
       </.link>
     </div>
