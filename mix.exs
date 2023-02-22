@@ -70,7 +70,6 @@ defmodule Picme.MixProject do
       {:sobelow, "~> 0.11", only: :dev},
 
       # Utils
-      {:phoenix_storybook, github: "phenixdigital/phoenix_storybook", only: :dev},
       {:floki, ">= 0.30.0", only: :test},
       {:cva, "~> 0.2"},
 
@@ -78,6 +77,7 @@ defmodule Picme.MixProject do
       {:lucide_icons, "~> 1.0.0"},
 
       # Development
+      {:phoenix_storybook, github: "phenixdigital/phoenix_storybook", only: :dev},
       {:credo, "~> 1.6", only: [:dev], runtime: false}
     ]
   end

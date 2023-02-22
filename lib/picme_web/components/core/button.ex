@@ -37,7 +37,7 @@ defmodule PicmeWeb.CoreComponents.Button do
       ghost: "btn-ghost",
       link: "btn-link"
     ],
-    default: :solid
+    default: :default
   )
 
   variant(
