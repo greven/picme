@@ -33,15 +33,15 @@ defmodule Picme.MixProject do
   defp deps do
     [
       # Phoenix Framework
-      {:phoenix, "~> 1.7.0-rc.3", override: true},
+      {:phoenix, "~> 1.7.0"},
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_html, "~> 3.3"},
-      {:phoenix_live_view, "~> 0.18.15"},
+      {:phoenix_live_view, "~> 0.18.16"},
       {:phoenix_live_reload, "~> 1.4", only: :dev},
       {:phoenix_live_dashboard, "~> 0.7.2"},
 
       # HTTP server
-      {:bandit, ">= 0.6.8"},
+      {:bandit, ">= 0.6.9"},
 
       # HTTP Client
       {:finch, "~> 0.14"},
@@ -70,11 +70,11 @@ defmodule Picme.MixProject do
       {:sobelow, "~> 0.11", only: :dev},
 
       # Utils
-      {:floki, ">= 0.30.0", only: :test},
+      {:floki, ">= 0.34.0", only: :test},
       {:cva, "~> 0.2"},
 
       # Assets
-      {:lucide_icons, "~> 1.0.0"},
+      {:lucide_icons, "~> 1.0"},
 
       # Development
       {:phoenix_storybook, github: "phenixdigital/phoenix_storybook", only: :dev},

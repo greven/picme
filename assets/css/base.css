@@ -1,7 +1,19 @@
-@layer base {
-  body {
-    font-family: theme("fontFamily.sans");
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+@import './reset.css';
+@import './colors.css';
+@import './fonts.css';
+
+:root {
+  @apply bg-surface-light-1 dark:bg-surface-dark-1;
+  @apply text-text-light-1 dark:text-text-dark-1;
+}
+
+::selection {
+  background-color: theme('colors.primary.DEFAULT');
+  color: theme('colors.white');
+}
+
+body {
+  font-family: theme('fontFamily.sans');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

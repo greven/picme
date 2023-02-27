@@ -16,26 +16,14 @@ defmodule PicmeWeb.CoreComponents.Button do
   """
 
   variant(
-    :size,
-    [
-      xs: "btn-xs",
-      sm: "btn-sm",
-      md: "btn-md",
-      lg: "btn-lg",
-      lg: "btn-xl"
-    ],
-    default: :md
-  )
-
-  variant(
     :variant,
     [
-      default: "",
-      solid: "btn-solid",
-      outline: "btn-outline",
-      light: "btn-light",
-      ghost: "btn-ghost",
-      link: "btn-link"
+      default: "btn--default",
+      solid: "btn--solid",
+      outline: "btn--outline",
+      light: "btn--light",
+      ghost: "btn--ghost",
+      link: "btn--link"
     ],
     default: :default
   )
@@ -43,16 +31,28 @@ defmodule PicmeWeb.CoreComponents.Button do
   variant(
     :intent,
     [
-      neutral: "",
-      primary: "btn-primary",
-      secondary: "btn-secondary",
-      accent: "btn-accent",
-      info: "btn-info",
-      success: "btn-success",
-      warning: "btn-warning",
-      error: "btn-error"
+      primary: "btn--primary",
+      secondary: "btn--secondary",
+      tertiary: "btn--tertiary",
+      dark: "btn--dark",
+      info: "btn--info",
+      success: "btn--success",
+      warning: "btn--warning",
+      error: "btn--error"
     ],
-    default: :neutral
+    default: :dark
+  )
+
+  variant(
+    :size,
+    [
+      xs: "btn--xs",
+      sm: "btn--sm",
+      md: "btn--md",
+      lg: "btn--lg",
+      lg: "btn--xl"
+    ],
+    default: :md
   )
 
   attr :type, :string, default: nil
@@ -67,7 +67,7 @@ defmodule PicmeWeb.CoreComponents.Button do
 
   def button(assigns) do
     ~H"""
-    <button type={@type} class={["btn", "phx-submit-loading:opacity-75", @cva_class, @class]} {@rest}>
+    <button type={@type} class={["phx-submit-loading:opacity-75", "btn", @cva_class, @class]} {@rest}>
       <%= render_slot(@inner_block) %>
     </button>
     """

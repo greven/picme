@@ -1,26 +1,48 @@
 <.flash_group flash={@flash} />
 <div class="p-8">
-  <div class="flex items-center gap-2">
+  <div class="flex flex-wrap items-center gap-2">
     <.button>Button</.button>
     <.button variant="solid">Button</.button>
-    <%!-- <.button variant="ghost" intent="error">Button</.button> --%>
+    <.button variant="solid" intent="primary">Button</.button>
+    <.button variant="solid" intent="secondary">Button</.button>
+    <.button variant="solid" intent="tertiary">Button</.button>
+    <.button variant="solid" intent="info">Button</.button>
+    <.button variant="solid" intent="success">Button</.button>
+    <.button variant="solid" intent="warning">Button</.button>
+    <.button variant="solid" intent="error">Button</.button>
 
-    <.button class="btn gap-2" variant="light" intent="primary">
+    <.button variant="outline">Button</.button>
+    <.button variant="outline" intent="primary">Button</.button>
+    <.button variant="outline" intent="secondary">Button</.button>
+    <.button variant="outline" intent="tertiary">Button</.button>
+
+    <.button variant="ghost">Button</.button>
+    <.button variant="ghost" intent="primary">Button</.button>
+    <.button variant="ghost" intent="secondary">Button</.button>
+    <.button variant="ghost" intent="tertiary">Button</.button>
+
+    <.button class="btn gap-2" intent="primary">
       <Lucideicons.activity class="h-5 w-5" />
       <span>Button</span>
     </.button>
-
-    <button class="btn btn-error btn-outline">Button</button>
   </div>
 
-  <h1 class="font-headings text-4xl my-4">Whereas recognition of the inherent dignity</h1>
+  <div class="mt-12">
+    <input type="text" />
+  </div>
 
-  <div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic labore dolore saepe quam, autem dolorem consequuntur sed vitae soluta, dicta dignissimos nobis pariatur? Qui accusamus est nemo quis?
-    Repudiandae maiores rem quod similique, inventore vitae nesciunt dolorum? Quos voluptate nobis similique quas, architecto doloremque magni atque. Ducimus veniam molestias tempora! Reprehenderit impedit rerum dolore alias laborum quae eius?
-    Perspiciatis consequatur optio sequi laborum veniam nisi reiciendis, blanditiis nam eveniet repellendus ex! Soluta rerum quas ullam fugit similique cum, ad nam laudantium hic earum odio sunt, est possimus rem.
-    Perspiciatis dolore veritatis dolor neque? Asperiores saepe ex recusandae incidunt voluptates explicabo? Dolorem, officia excepturi. Maxime perferendis doloribus id obcaecati iste deserunt. Modi provident exercitationem placeat impedit. Esse, delectus ipsam.
-    Atque soluta obcaecati consectetur corporis culpa amet ex minus, animi cupiditate, ipsa aut reprehenderit harum veritatis modi voluptate sapiente maxime eum sit fugit repudiandae inventore. Cupiditate vero dolor perspiciatis repellendus!
-    Molestiae, deleniti provident facilis molestias aperiam laborum veritatis eligendi minima mollitia consequatur ullam est quo, magni vero facere consectetur architecto. Aperiam omnis consequatur amet perspiciatis optio non sint sed ut?
+  <div class="mt-12 prose">
+    <h1 class="font-headings text-4xl font-normal">
+      The quick brown fox jumps over the lazy dog
+    </h1>
+
+    <div class="">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic labore dolore saepe quam, autem dolorem consequuntur sed vitae soluta, dicta dignissimos nobis pariatur? Qui accusamus est nemo quis?
+      Repudiandae maiores rem quod similique, inventore vitae nesciunt dolorum? Quos voluptate nobis similique quas, architecto doloremque magni atque. Ducimus veniam molestias tempora! Reprehenderit impedit rerum dolore alias laborum quae eius?
+      Perspiciatis consequatur optio sequi laborum veniam nisi reiciendis, blanditiis nam eveniet repellendus ex! Soluta rerum quas ullam fugit similique cum, ad nam laudantium hic earum odio sunt, est possimus rem.
+      Perspiciatis dolore veritatis dolor neque? Asperiores saepe ex recusandae incidunt voluptates explicabo? Dolorem, officia excepturi. Maxime perferendis doloribus id obcaecati iste deserunt. Modi provident exercitationem placeat impedit. Esse, delectus ipsam.
+      Atque soluta obcaecati consectetur corporis culpa amet ex minus, animi cupiditate, ipsa aut reprehenderit harum veritatis modi voluptate sapiente maxime eum sit fugit repudiandae inventore. Cupiditate vero dolor perspiciatis repellendus!
+      Molestiae, deleniti provident facilis molestias aperiam laborum veritatis eligendi minima mollitia consequatur ullam est quo, magni vero facere consectetur architecto. Aperiam omnis consequatur amet perspiciatis optio non sint sed ut?
+    </div>
   </div>
 </div>

@@ -1,9 +1,133 @@
 .btn {
-  border-width: 2px;
-  border-radius: theme("borderRadius.full");
-  font-weight: theme("fontWeight.semibold");
+  @apply px-4 py-2 text-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 focus:ring-offset-surface-light-1 dark:focus:ring-offset-surface-dark-1;
+  @apply transition duration-200 ease-in-out;
 
-  &:hover {
-    border: 2px solid red;
+  display: inline-flex;
+  align-items: center;
+
+  font-weight: theme('fontWeight.medium');
+
+  color: theme('colors.black');
+  background-color: transparent;
+
+  border-width: 1px;
+  border-color: transparent;
+  border-radius: theme('borderRadius.xl');
+
+  user-select: none;
+
+  &--disabled,
+  &[disabled] {
+    pointer-events: none;
   }
 }
+
+.btn--default {
+  @apply hover:bg-gray-50;
+
+  color: theme('colors.gray.700');
+  background-color: theme('colors.white');
+
+  border-color: theme('colors.gray.300');
+
+  box-shadow: theme('boxShadow.sm');
+}
+
+.btn--solid {
+  box-shadow: theme('boxShadow.sm');
+
+  &.btn--primary {
+    @apply bg-primary-600 text-white;
+    @apply hover:bg-primary-700;
+    @apply focus:ring-primary-500;
+  }
+
+  &.btn--secondary {
+    @apply bg-secondary-600 text-white;
+    @apply hover:bg-secondary-700;
+    @apply focus:ring-secondary-500;
+  }
+
+  &.btn--tertiary {
+    @apply bg-tertiary-600 text-white;
+    @apply hover:bg-tertiary-700;
+    @apply focus:ring-tertiary-500;
+  }
+
+  &.btn--dark {
+    @apply bg-dark-900 text-dark-50;
+    @apply hover:bg-dark-700;
+    @apply focus:ring-dark-700;
+  }
+
+  &.btn--info {
+    @apply bg-info-600 text-white;
+    @apply hover:bg-info-700;
+    @apply focus:ring-info-500;
+  }
+
+  &.btn--success {
+    @apply bg-success-600 text-white;
+    @apply hover:bg-success-700;
+    @apply focus:ring-success-500;
+  }
+
+  &.btn--warning {
+    @apply bg-warning-600 text-white;
+    @apply hover:bg-warning-700;
+    @apply focus:ring-warning-500;
+  }
+
+  &.btn--error {
+    @apply bg-error-600 text-white;
+    @apply hover:bg-error-700;
+    @apply focus:ring-error-500;
+  }
+}
+
+/* .btn--outline {
+  &.btn--primary {
+    @apply border-primary text-primary;
+    @apply hover:bg-primary hover:text-primary-800;
+    @apply focus:ring-primary-500;
+  }
+
+  &.btn--secondary {
+    @apply border-secondary text-secondary;
+    @apply hover:bg-secondary hover:text-secondary-800;
+    @apply focus:ring-secondary-500;
+  }
+
+  &.btn--tertiary {
+    @apply border-tertiary text-tertiary;
+    @apply hover:bg-tertiary hover:text-tertiary-800;
+    @apply focus:ring-tertiary-500;
+  }
+
+  &.btn--dark {
+    @apply border-dark-900 text-dark-900;
+    @apply hover:bg-dark-900 hover:text-dark-50;
+    @apply focus:ring-dark-700;
+  }
+}
+
+.btn--ghost {
+  &.btn--primary {
+    @apply text-primary;
+    @apply hover:bg-primary-100 hover:text-primary-800;
+    @apply focus:ring-primary-500;
+  }
+
+  &.btn--secondary {
+    @apply text-secondary;
+    @apply hover:bg-secondary-100 hover:text-secondary-800;
+    @apply focus:ring-secondary-500;
+  }
+
+  &.btn--dark {
+    @apply text-dark-900;
+    @apply hover:bg-dark-200;
+    @apply focus:ring-dark-700;
+  }
+} */
