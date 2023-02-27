@@ -64,7 +64,7 @@ defmodule Picme.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
 
-      # Securityr
+      # Security
       {:bcrypt_elixir, "~> 3.0"},
       {:comeonin, "~> 5.3"},
       {:sobelow, "~> 0.11", only: :dev},
